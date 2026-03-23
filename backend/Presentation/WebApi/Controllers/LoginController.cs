@@ -1,35 +1,26 @@
-﻿using Application.User.Commands.Login;
-using Application.User.Models;
+using Application.Users.Commands.Login;
+using Application.Users.Models;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using System;
 
-namespace WebApi.Controllers
+namespace WebApi.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+public class LoginController : ApiControllerBase
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class LoginController : ControllerBase
+    public LoginController(IMediator mediator)
+        : base(mediator)
     {
-        private readonly IMediator _mediator;
+    }
 
-        public LoginController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Login([FromBody] LoginCommand command)
-        {
-            try
-            {
-                var response = await _mediator.Send(command);
-                return Ok(response);
-            }
-            catch (UnauthorizedAccessException ex)
-            {
-                return Unauthorized(new { message = ex.Message });
-            }
-        }
+    [HttpPost]
+    [ProducesResponseType(typeof(LoginResponse), StatusCodes.Status200OK)]
+    public async Task<IActionResult> Login([FromBody] LoginCommandRequest command)
+    {
+        var response = await Mediator.Send(command);
+        return CreateResponse(response);
     }
 }

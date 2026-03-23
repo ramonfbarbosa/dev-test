@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
+using System.Linq;
 
 namespace Common
 {
@@ -60,7 +61,7 @@ namespace Common
 
         public static string UnMask(this string value)
         {
-            return value.HasValue() ? value.Replace("-", "").Replace(".", "").Replace("/", "") : value;
+            return string.IsNullOrEmpty(value) ? value : new string(value.Where(char.IsDigit).ToArray());
         }
 
     }

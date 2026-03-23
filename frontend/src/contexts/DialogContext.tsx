@@ -1,63 +1,91 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
-
-import { Button, ButtonProps } from '@mui/material';
-import BaseDialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
+import { Button, Modal } from 'react-bootstrap';
+import { AlertTriangle, CheckCircle, Info, XCircle, Icon as FeatherIcon } from 'react-feather';
 import { errorHandling } from '@/utils/errorHandling';
 
-interface Payload {
-    title: string,
-    message: string,
-    actions: {
-        label: string,
-        color?: ButtonProps['color'],
-        onClick?: () => Promise<void> | void
-    }[]
+type DialogVariant = 'danger' | 'success' | 'warning' | 'info';
+
+interface DialogAction {
+    label: string;
+    variant?: string;
+    onClick?: () => Promise<void> | void;
 }
 
-const DialogContext = createContext<{
-    showDialog: (payload: Payload) => Promise<void> | void
+interface Payload {
+    title: string;
+    message: string;
+    variant?: DialogVariant;
+    icon?: FeatherIcon;
+    actions: DialogAction[];
 }
->({
-    showDialog: () => { }
+
+const variantConfig: Record<DialogVariant, { icon: FeatherIcon; color: string }> = {
+    danger:  { icon: XCircle,       color: '#d9534f' },
+    success: { icon: CheckCircle,   color: '#4BBF73' },
+    warning: { icon: AlertTriangle, color: '#f0ad4e' },
+    info:    { icon: Info,          color: '#3B82EC' },
+};
+
+const DialogContext = createContext<{ showDialog: (payload: Payload) => void }>({
+    showDialog: () => {},
 });
 
-export const useDialog = () => useContext(DialogContext)
+export const useDialog = () => useContext(DialogContext);
 
 export const DialogProvider = (props: { children: ReactNode }) => {
     const [dialogContent, setDialogContent] = useState<Payload | undefined>();
 
+    const variant = dialogContent?.variant ?? 'info';
+    const config = variantConfig[variant];
+    const Icon = dialogContent?.icon ?? config.icon;
+
     return (
-        <DialogContext.Provider value={{
-            showDialog: (payload: Payload) => setDialogContent(payload)
-        }}>
-            <BaseDialog
-                open={!!dialogContent}
-                onClose={() => setDialogContent(undefined)}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
+        <DialogContext.Provider value={{ showDialog: (payload) => setDialogContent(payload) }}>
+            <Modal
+                show={!!dialogContent}
+                onHide={() => setDialogContent(undefined)}
+                centered
+                size="sm"
             >
-                <DialogTitle id="alert-dialog-title">
-                    {dialogContent?.title}
-                </DialogTitle>
-                <DialogContent>
-                    {dialogContent?.message}
-                </DialogContent>
+                <Modal.Body className="text-center px-4 py-4">
+                    <div
+                        style={{
+                            width: 64,
+                            height: 64,
+                            borderRadius: '50%',
+                            backgroundColor: `${config.color}14`,
+                            border: `2px solid ${config.color}30`,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            margin: '0 auto 1rem',
+                        }}
+                    >
+                        <Icon size={30} color={config.color} />
+                    </div>
+
+                    <h5 className="mb-2" style={{ fontWeight: 600 }}>
+                        {dialogContent?.title}
+                    </h5>
+
+                    <p className="text-muted mb-0" style={{ fontSize: '0.9rem' }}>
+                        {dialogContent?.message}
+                    </p>
+                </Modal.Body>
+
                 {dialogContent?.actions && (
-                    <DialogActions>
-                        {dialogContent?.actions.map(({ color = 'primary', ...action }, index) => (
+                    <Modal.Footer className="justify-content-center border-0 pt-0 pb-4" style={{ gap: '0.5rem' }}>
+                        {dialogContent.actions.map((action, index) => (
                             <Button
                                 key={index}
-                                style={{ textTransform: 'none', color: color === 'primary' ? '#D14224' : '#4A5056' }}
+                                variant={action.variant ?? 'primary'}
+                                size="sm"
+                                style={{ minWidth: 100, fontWeight: 500 }}
                                 onClick={async () => {
                                     try {
                                         setDialogContent(undefined);
-                                        if (action.onClick)
-                                            await action.onClick();
-                                    }
-                                    catch (err) {
+                                        if (action.onClick) await action.onClick();
+                                    } catch (err) {
                                         errorHandling(err);
                                     }
                                 }}
@@ -65,10 +93,10 @@ export const DialogProvider = (props: { children: ReactNode }) => {
                                 {action.label}
                             </Button>
                         ))}
-                    </DialogActions>
+                    </Modal.Footer>
                 )}
-            </BaseDialog>
+            </Modal>
             {props.children}
         </DialogContext.Provider>
-    )
-}
+    );
+};

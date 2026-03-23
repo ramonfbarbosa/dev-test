@@ -1,0 +1,14 @@
+nome,sobrenome,telefone,correio,cpf,nascimento,cep,rua,num,comp,bairro,cidade,uf
+,Silva,11987654321,ana.silva@example.com,39081245001,15/04/1992,01310-100,Avenida Paulista,1000,Apto 101,Bela Vista,Sao Paulo,SP
+Bruno,,21987654321,bruno.souza@example.com,58190324077,1988-11-30,20040-020,Rua Primeiro de Marco,200,Sala 5,Centro,Rio de Janeiro,RJ
+Carla,Oliveira,,isso-nao-e-email,72345618090,02/07/1995,30130-000,Rua da Bahia,500,,Funcionarios,Belo Horizonte,MG
+Diego,Ferreira,41999887766,diego.ferreira@example.com,,nao-e-data,80010-010,Rua XV de Novembro,320,Conj 12,Centro,Curitiba,PR
+Elaine,Santos,51977665544,elaine.santos@example.com,91234567801,28/12/1985,,Rua dos Andradas,1500,Apto 302,Centro Historico,Porto Alegre,RS
+Fernando,Costa,71966554433,fernando.costa@example.com,13456789012,1993-06-10,40020-000,,45,,Comercio,Salvador,BA
+Gabriela,Mendes,61955443322,gabriela.mendes@example.com,25678901234,14/09/1991,70070-120,SBS Quadra 2,,,Asa Sul,Brasilia,DF
+Henrique,Lima,81944332211,henrique.lima@example.com,37890123456,1987-01-22,50010-000,Rua do Sol,88,Sala 3,,Recife,PE
+Isabela,Rocha,85933221100,isabela.rocha@example.com,49012345678,30/05/1998,60060-370,Rua Guilherme Rocha,250,,Centro,,CE
+Joao,Almeida,92922110099,joao.almeida@example.com,51234567890,1982-08-05,69010-060,Rua Barroso,33,Fundos,Centro,Manaus,
+,,,,,,,,,,,,
+Lucas,Pereira,1234567890123456,lucas@example.com,75678901234,01/01/1996,29010-002,Avenida Princesa Isabel,12345678901,,Centro,Vitoria,EST
+Mariana,Araujo,98899887766,mariana@@araujo..com,87890123456,31/02/1989,79002-170,Rua 14 de Julho,2000,Loja 7,Centro,Campo Grande,MS

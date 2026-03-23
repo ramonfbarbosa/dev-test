@@ -358,3 +358,5 @@ package-lock.json
 .idea/
 .vscode/
 memory.md
+frontend/dist/
+backend/Presentation/WebApi/ClientImports/

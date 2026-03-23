@@ -3,6 +3,10 @@
 export const NAVIGATION_PATH = {
     DASHBOARD: {
         ROOT: "/",
+        OVERVIEW: {
+            RELATIVE: "dashboard",
+            ABSOLUTE: "/dashboard"
+        },
     },
     
     AUTH: {
@@ -10,6 +14,10 @@ export const NAVIGATION_PATH = {
         SIGN_IN: {
             RELATIVE: "sign-in",
             ABSOLUTE: "/auth/sign-in"
+        },
+        CONFIRM_EMAIL: {
+            RELATIVE: "confirm-email",
+            ABSOLUTE: "/auth/confirm-email"
         },
     },
     ERROR_PAGES: {
@@ -26,7 +34,21 @@ export const NAVIGATION_PATH = {
             RELATIVE: "criar",
             ABSOLUTE: "/clientes/criar"
         },
-        
+        IMPORTS: {
+            RELATIVE: "importacoes",
+            ABSOLUTE: "/clientes/importacoes"
+        },
+    },
+    USERS: {
+        ROOT: "usuarios",
+        LISTING: {
+            RELATIVE: "listagem",
+            ABSOLUTE: "/usuarios/listagem"
+        },
+        CREATE: {
+            RELATIVE: "criar",
+            ABSOLUTE: "/usuarios/criar"
+        },
     }
 }
 

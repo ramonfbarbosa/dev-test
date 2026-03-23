@@ -1,0 +1,13 @@
+CREATE USER IF NOT EXISTS 'application_user'@'%' IDENTIFIED BY 'NbY3GxT@M_f!owe6sy93X9Uk';
+GRANT ALL PRIVILEGES ON *.* TO 'application_user'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+EOF
+
+# Rodar o script SQL dentro do container
+docker exec -i client-control-mysql \
+  mysql -u root -pR9Q97t9pgiwcRhrfDKyGCjT- < init-user.sql
+
+# Remover o script local
+rm init-user.sql
+
+echo "Usuário 'application_user' criado com sucesso e autorizado a conectar remotamente."

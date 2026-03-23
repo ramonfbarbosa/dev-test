@@ -1,12 +1,11 @@
 ﻿using System;
 
-namespace Application.Common.Exceptions
+namespace Application.Common.Exceptions;
+
+public class BadRequestException : Exception
 {
-    public class BadRequestException : Exception
+    public BadRequestException(string message)
+        : base(message)
     {
-        public BadRequestException(string message)
-            : base(message)
-        {
-        }
     }
 }

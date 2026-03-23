@@ -4,6 +4,14 @@ body {
     background-color: #DBDCDE !important;
 }
 
+body[data-theme=dark] {
+    background-color: #202634 !important;
+}
+
+body[data-theme=dark] .spinner .path {
+    stroke: #7b8ab8;
+}
+
 #splash-screen {
     display: flex;
     position: absolute;
@@ -17,9 +25,31 @@ body {
     flex-direction: column;
 }
 
-#splash-screen img {
+#splash-screen > div:first-child {
     margin-left: calc(100vw - 100%);
     margin-bottom: 30px;
+}
+
+.splash-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+}
+
+.splash-brand svg {
+    margin-right: 0.15rem;
+}
+
+.splash-brand span {
+    color: #1F2937;
+    font-weight: 600;
+    font-size: 1.6rem;
+    white-space: nowrap;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body[data-theme=dark] .splash-brand span {
+    color: #e2e8f0;
 }
 
 #splash-screen.hidden {

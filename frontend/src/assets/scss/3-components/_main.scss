@@ -5,9 +5,27 @@
   min-width: 0;
   transition: $sidebar-transition;
   flex-direction: column;
-  background-color: #DBDCDE;
+  background-color: $body-bg;
 
   @include media-breakpoint-down(md) {
     overflow-y: hidden;
   }
+}
+
+.login-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+
+  span {
+    color: #1F2937;
+    font-weight: 600;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    font-family: 'Segoe UI', sans-serif;
+  }
+}
+
+body[data-theme=dark] .login-brand span {
+  color: #e2e8f0;
 }

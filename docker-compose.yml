@@ -1,0 +1,54 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: clientcontrol-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: R9Q97t9pgiwcRhrfDKyGCjT-
+      MYSQL_DATABASE: clientcontrol
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docker/init-user.sql:/docker-entrypoint-initdb.d/01-init-user.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-pR9Q97t9pgiwcRhrfDKyGCjT-"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: clientcontrol-backend
+    ports:
+      - "8081:8081"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:8081
+      DOTNET_EnableDiagnostics: "0"
+      ConnectionStrings__ConnectionString: "Server=mysql;Port=3306;Database=clientcontrol;Uid=application_user;Pwd=NbY3GxT@M_f!owe6sy93X9Uk;"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - backend_imports:/app/ClientImports
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: clientcontrol-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      VITE_API_URL: http://localhost:8081/api
+      VITE_APP_TITLE: ClientControl
+      VITE_APP_SECURE_LOCAL_STORAGE_HASH_KEY: docker_local_storage_key
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data:
+  backend_imports:

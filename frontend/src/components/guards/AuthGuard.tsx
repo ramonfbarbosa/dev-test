@@ -16,10 +16,14 @@ function AuthGuard({ children, belongsTo }: AuthGuardType) {
   const { access_token, user } = useAppSelector(state => state.auth);
   const { pathname } = useLocation();
 
+  const redirectTo = user?.profile === UserProfile.Operator
+    ? NAVIGATION_PATH.CLIENTS.LISTING.ABSOLUTE
+    : NAVIGATION_PATH.DASHBOARD.ROOT;
+
   if (belongsTo !== undefined && belongsTo.length > 0 && user?.profile !== undefined) {
     const authorized = belongsTo.some((role) => user.profile === role);
     if (!authorized) {
-      return <Navigate to={NAVIGATION_PATH.ERROR_PAGES.PAGE_500} />;
+      return <Navigate to={redirectTo} replace />;
     }
   }
 

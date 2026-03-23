@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "build": "npm --prefix frontend run build && dotnet build backend\\Presentation\\WebApi\\WebApi.csproj -o %TEMP%\\dev-test-ramon-webapi-build",
+    "build:frontend": "npm --prefix frontend run build",
+    "build:backend": "dotnet build backend\\Presentation\\WebApi\\WebApi.csproj -o %TEMP%\\dev-test-ramon-webapi-build"
+  },
   "devDependencies": {
     "@types/redux-persist": "^4.3.1"
   }

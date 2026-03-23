@@ -2,6 +2,7 @@ import axios, { AxiosError } from "axios";
 import { NAVIGATION_PATH } from "@/constants";
 import { store } from "@/redux/store";
 import { AuthState } from "@/redux/slices/auth.slice";
+import { clearAuthSession } from "@/utils/authSession";
 
 const axiosInstance = axios.create({
   baseURL: import.meta.env.VITE_API_URL as string,
@@ -34,6 +35,7 @@ axiosInstance.interceptors.response.use(
   (response) => response,
   (error: AxiosError) => {
     if (error.response?.status === 401) {
+      clearAuthSession();
       const pathname = window.location.pathname;
       let route = `${NAVIGATION_PATH.AUTH.SIGN_IN.ABSOLUTE}`;
       if (pathname !== '/') {

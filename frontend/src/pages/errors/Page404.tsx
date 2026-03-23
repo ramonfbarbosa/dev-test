@@ -12,8 +12,8 @@ import { UserProfile } from "@/types/api/enums/UserProfile";
 
 const Page404 = () => {
     const { user } = useAppSelector((state) => state.auth);
-    const navigate: string = !!user && user.profile === UserProfile.Administrator
-        ? NAVIGATION_PATH.DASHBOARD.ROOT
+    const navigate: string = !!user && user.profile === UserProfile.Operator
+        ? NAVIGATION_PATH.CLIENTS.LISTING.ABSOLUTE
         : NAVIGATION_PATH.DASHBOARD.ROOT;
 
     return (

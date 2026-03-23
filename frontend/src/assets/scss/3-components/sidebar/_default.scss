@@ -79,7 +79,7 @@ a.sidebar-link {
 
 .sidebar-item:hover,
 .sidebar-item.active {
-  background-color: black;
+  @include theme("background-color", $sidebar-item-active-bg);
   transition: background-color 75ms ease-in-out;
 }
 
@@ -154,6 +154,12 @@ a.sidebar-link {
   display: block;
   text-align: center;
   @include theme("color", $sidebar-brand-color);
+  @include theme("background-color", (
+    "default": #f4f7f9,
+    "colored": transparent,
+    "dark": transparent,
+    "light": transparent
+  ));
 
   &:hover {
     text-decoration: none;

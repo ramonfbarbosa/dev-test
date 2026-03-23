@@ -1,12 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Persistence
+namespace Persistence;
+
+public class ClientControlContextFactory : DesignTimeDbContextFactoryBase<ClientControlContext>
 {
-    public class ClientControlContextFactory : DesignTimeDbContextFactoryBase<ClientControlContext>
+    protected override ClientControlContext CreateNewInstance(DbContextOptions<ClientControlContext> options)
     {
-        protected override ClientControlContext CreateNewInstance(DbContextOptions<ClientControlContext> options)
-        {
-            return new ClientControlContext(options);
-        }
+        return new ClientControlContext(options);
     }
 }

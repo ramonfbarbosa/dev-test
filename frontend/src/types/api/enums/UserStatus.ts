@@ -1,19 +1,19 @@
 export enum UserStatus {
-    CONFIRMED = 0,
-    PENDING_INFORMATION = 1,
-    FORCE_CHANGE_PASSWORD = 2,
-    BLOCKED = 3
+    Confirmed = 0,
+    PendingInformation = 1,
+    ForceChangePassword = 2,
+    Blocked = 3
 }
 
 export function getBadgeColorByUserStatus(value: UserStatus) {
     switch (value) {
-        case UserStatus.CONFIRMED:
+        case UserStatus.Confirmed:
             return "success";
-        case UserStatus.PENDING_INFORMATION:
+        case UserStatus.PendingInformation:
             return "warning";
-        case UserStatus.FORCE_CHANGE_PASSWORD:
+        case UserStatus.ForceChangePassword:
             return "info";
-        case UserStatus.BLOCKED:
+        case UserStatus.Blocked:
             return "danger";
     }
 }

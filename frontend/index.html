@@ -20,6 +20,7 @@
 </head>
 
 <body>
+  <script>try{var t=JSON.parse(localStorage.getItem("theme"));if(t){document.body.dataset.theme=t;if(t==="dark"){var s=document.querySelector(".js-stylesheet");if(s){var h=s.getAttribute("href");s.setAttribute("href",h.replace("light","dark"));}}}}catch(e){}</script>
   <div id="root"></div>
   <script type="module" src="/src/index.tsx"></script>
 </body>

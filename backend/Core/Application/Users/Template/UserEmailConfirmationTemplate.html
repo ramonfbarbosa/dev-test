@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de email</title>
+</head>
+<body style="margin:0;padding:0;background-color:{{BackgroundColor}};font-family:'Segoe UI',Arial,sans-serif;color:{{TextColor}};">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color:{{BackgroundColor}};padding:32px 16px;">
+        <tr>
+            <td align="center">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:600px;background-color:{{CardColor}};border-radius:20px;overflow:hidden;border:1px solid {{BorderColor}};box-shadow:0 12px 32px rgba(31,41,55,0.08);">
+                    <tr>
+                        <td bgcolor="#FFFFFF" style="padding:32px 40px 24px;background-color:#FFFFFF;color:#000000;border-bottom:1px solid {{BorderColor}};">
+                            <div style="margin:0 0 16px;font-size:14px;line-height:1.5;font-weight:700;letter-spacing:0.04em;color:#000000;mso-line-height-rule:exactly;">
+                                <font color="#000000">{{BrandName}}</font>
+                            </div>
+                            <div style="margin:0 0 8px;font-size:28px;line-height:1.2;font-weight:700;color:#000000;mso-line-height-rule:exactly;">
+                                <font color="#000000">Confirme seu email</font>
+                            </div>
+                            <div style="margin:0;font-size:15px;line-height:1.6;color:#000000;mso-line-height-rule:exactly;">
+                                <font color="#000000">Falta só um passo para liberar seu acesso ao sistema.</font>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:40px;">
+                            <p style="margin:0 0 16px;font-size:16px;line-height:1.7;color:{{TextColor}};">
+                                Olá, <strong>{{Username}}</strong>.
+                            </p>
+                            <p style="margin:0 0 24px;font-size:15px;line-height:1.7;color:{{TextColor}};">
+                                Recebemos uma solicitação para confirmar o seu email no <strong>{{BrandName}}</strong>. Clique no botão abaixo para concluir essa etapa.
+                            </p>
+                            <table role="presentation" cellspacing="0" cellpadding="0" style="margin:0 0 24px;">
+                                <tr>
+                                    <td align="center" bgcolor="{{PrimaryColor}}" style="border-radius:12px;">
+                                        <a href="{{ConfirmationUrl}}" style="display:inline-block;padding:14px 24px;font-size:15px;font-weight:700;color:#FFFFFF;text-decoration:none;">
+                                            Confirmar email
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div style="margin:0 0 24px;padding:16px;border-radius:14px;background-color:{{BackgroundColor}};border:1px solid {{BorderColor}};">
+                                <p style="margin:0 0 8px;font-size:13px;font-weight:700;color:{{TextColor}};">
+                                    Se o botão não funcionar, copie e cole este link no navegador:
+                                </p>
+                                <p style="margin:0;font-size:13px;line-height:1.7;word-break:break-word;color:{{PrimaryDarkColor}};">
+                                    {{ConfirmationUrl}}
+                                </p>
+                            </div>
+                            <p style="margin:0;font-size:14px;line-height:1.7;color:{{MutedTextColor}};">
+                                Se você não solicitou este cadastro, pode ignorar esta mensagem com segurança.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:24px 40px;background-color:#FBFCFD;border-top:1px solid {{BorderColor}};">
+                            <p style="margin:0 0 6px;font-size:13px;font-weight:700;color:{{TextColor}};">
+                                {{BrandName}}
+                            </p>
+                            <p style="margin:0;font-size:12px;line-height:1.6;color:{{MutedTextColor}};">
+                                Mensagem automática de confirmação de acesso.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

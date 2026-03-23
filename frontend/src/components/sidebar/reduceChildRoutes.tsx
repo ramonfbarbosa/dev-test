@@ -17,7 +17,7 @@ const reduceChildRoutes = (props: ReduceChildRoutesProps) => {
   const { items, page, depth } = props;
   const router = useLocation();
   const currentRoute = router.pathname;
-  const profile = useAppSelector(state => state.auth?.profile?.profile)
+  const profile = useAppSelector(state => state.auth.user?.profile)
 
   let open = page.href
     ? currentRoute?.includes(page.href)

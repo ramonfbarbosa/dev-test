@@ -1,6 +1,11 @@
 import useSidebar from "../../hooks/useSidebar";
 import SidebarNav from "./SidebarNav";
-import Logo from "../../assets/logo.svg";
+
+const BrandIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
+    <rect x="5" y="5" width="22" height="22" rx="4" fill="#4F46E5" transform="rotate(45 16 16)" />
+  </svg>
+);
 
 const Sidebar = () => {
   const { isOpen } = useSidebar();
@@ -8,8 +13,9 @@ const Sidebar = () => {
   return (
     <nav className={`sidebar ${!isOpen ? "collapsed" : ""}`}>
       <div className="sidebar-content">
-          <a className="sidebar-brand" href="/" style={{backgroundColor: "#f4f7f9"}}>
-            <img src={Logo} height={50} width={200} />
+          <a className="sidebar-brand" href="/" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.15rem" }}>
+            <BrandIcon />
+            <span style={{ fontWeight: 600, fontSize: "1.15rem", whiteSpace: "nowrap" }}>ClientControl</span>
           </a>
           <SidebarNav />
       </div>

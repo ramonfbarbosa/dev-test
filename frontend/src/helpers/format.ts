@@ -22,6 +22,10 @@ export const format = {
         let inputIndex = 0;
 
         value = value.replace(/\D/g, '');
+        if (!value) {
+            return '';
+        }
+
         for (let i = 0; i < mask.length; i++) {
             if (mask[i] === '#') {
                 if (inputIndex < value.length) {
@@ -31,7 +35,11 @@ export const format = {
                     break;
                 }
             } else {
-                result += mask[i];
+                if (inputIndex < value.length) {
+                    result += mask[i];
+                } else {
+                    break;
+                }
             }
         }
 

@@ -1,0 +1,21 @@
+firstName,lastName,phoneNumber,email,documentNumber,birthDate,postalCode,addressLine,number,complement,neighborhood,city,state
+Ricardo,Monteiro,11934567890,ricardo.monteiro@example.com,11223344556,10/01/1990,04538-133,Rua Funchal,411,Andar 3,Vila Olimpia,Sao Paulo,SP
+Leticia,Campos,21945678901,leticia.campos@example.com,22334455667,1985-05-22,22041-080,Rua Barata Ribeiro,502,,Copacabana,Rio de Janeiro,RJ
+Thiago,Rezende,31956789012,thiago.rezende@example.com,33445566778,18/09/1993,30140-071,Avenida Afonso Pena,1901,Sala 801,Funcionarios,Belo Horizonte,MG
+Camila,Nogueira,41967890123,camila.nogueira@example.com,44556677889,1991-12-03,80420-210,Rua Visconde de Nacar,1200,Apto 45,Centro,Curitiba,PR
+Eduardo,Vieira,51978901234,eduardo.vieira@example.com,55667788990,07/07/1988,91330-002,Avenida Ipiranga,6681,,Partenon,Porto Alegre,RS
+Amanda,Pinto,71989012345,amanda.pinto@example.com,66778899001,1994-02-14,41820-021,Rua Ewerton Visco,290,Bloco C,Caminho das Arvores,Salvador,BA
+Felipe,Moreira,61990123456,felipe.moreira@example.com,77889900112,23/11/1986,70297-400,SQN 312 Bloco B,48,,Asa Norte,Brasilia,DF
+Juliana,Correia,81901234567,juliana.correia@example.com,88990011223,1997-08-30,51020-280,Rua do Hospicio,63,Sala 12,Boa Vista,Recife,PE
+Rodrigo,Farias,85912345678,rodrigo.farias@example.com,99001122334,05/04/1983,60175-047,Avenida Santos Dumont,1789,,Aldeota,Fortaleza,CE
+Fernanda,Castro,92923456789,fernanda.castro@example.com,10112233445,1996-10-17,69053-015,Rua Ramos Ferreira,1000,Apto 72,Centro,Manaus,AM
+Marcos,Cunha,62934567890,marcos.cunha@example.com,21223344556,29/06/1989,74125-100,Avenida T-9,1105,,Setor Bueno,Goiania,GO
+Patricia,Lopes,27945678901,patricia.lopes@example.com,32334455667,1992-03-11,29055-130,Rua Jose Teixeira,245,Apto 102,Praia do Canto,Vitoria,ES
+Gustavo,Freitas,98956789012,gustavo.freitas@example.com,43445566778,14/12/1987,79020-310,Rua Rui Barbosa,880,,Centro,Campo Grande,MS
+Aline,Ramos,91967890123,aline.ramos@example.com,54556677889,1995-01-28,66035-170,Travessa Padre Eutiquio,1500,Sala 4,Batista Campos,Belem,PA
+Daniel,Nascimento,84978901234,daniel.nascimento@example.com,65667788990,20/03/1991,59025-300,Avenida Prudente de Morais,507,,Tirol,Natal,RN
+Vanessa,Cavalcanti,63989012345,vanessa.cavalcanti@example.com,76778899001,1984-07-09,64001-280,Rua Acre,775,Fundos,Centro,Teresina,PI
+Leonardo,Azevedo,65990123456,leonardo.azevedo@example.com,87889900112,02/10/1998,78015-480,Rua Comandante Costa,320,,Centro Norte,Cuiaba,MT
+Bianca,Melo,68901234567,bianca.melo@example.com,98990011223,1993-06-15,69908-620,Rua Hugo Carneiro,90,Apto 6,Bosque,Rio Branco,AC
+Renato,Duarte,96912345678,renato.duarte@example.com,10101122334,16/08/1986,57035-350,Rua Jangadeiros Alagoanos,442,,Pajucara,Maceio,AL
+Cristina,Tavares,79923456789,cristina.tavares@example.com,21212233445,1990-11-25,79010-210,Rua Marechal Rondon,655,Sala 3,Centro,Campo Grande,MS

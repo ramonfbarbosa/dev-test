@@ -1,5 +1,7 @@
-.react-select-container {
-  .react-select__control {
+.react-select-container,
+.select2 {
+  .react-select__control,
+  .select2__control {
     background-color: $white;
     border-color: $gray-400;
     color: $gray-700;
@@ -10,26 +12,43 @@
     }
   }
 
-  .react-select__menu {
+  .react-select__menu,
+  .select2__menu {
     background-color: $white;
     border: 1px solid $gray-400;
+    z-index: 5;
   }
 
-  .react-select__option {
+  .react-select__option,
+  .select2__option {
     background-color: $white;
     color: $gray-700;
 
-    &:hover {
+    &:hover,
+    &--is-focused {
       background-color: $gray-100;
+    }
+
+    &--is-selected {
+      background-color: $primary;
+      color: #fff;
     }
   }
 
-  .react-select__indicator-separator {
-    background-color: $white;
+  .react-select__indicator-separator,
+  .select2__indicator-separator {
+    background-color: $gray-400;
   }
 
   .react-select__placeholder,
-  .react-select__single-value {
+  .react-select__single-value,
+  .select2__placeholder,
+  .select2__single-value {
+    color: $gray-700;
+  }
+
+  .react-select__input-container,
+  .select2__input-container {
     color: $gray-700;
   }
 }

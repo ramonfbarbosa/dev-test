@@ -1,0 +1,21 @@
+firstName,lastName,phoneNumber,email,documentNumber,birthDate,postalCode,addressLine,number,complement,neighborhood,city,state
+Ana,Silva,11987654321,ana.silva@example.com,39081245001,15/04/1992,01310-100,Avenida Paulista,1000,Apto 101,Bela Vista,Sao Paulo,SP
+Bruno,Souza,21987654321,bruno.souza@example.com,58190324077,1988-11-30,20040-020,Rua Primeiro de Marco,200,Sala 5,Centro,Rio de Janeiro,RJ
+Carla,Oliveira,31988776655,carla.oliveira@example.com,72345618090,02/07/1995,30130-000,Rua da Bahia,500,,Funcionarios,Belo Horizonte,MG
+Diego,Ferreira,41999887766,diego.ferreira@example.com,84312567023,1990-03-18,80010-010,Rua XV de Novembro,320,Conj 12,Centro,Curitiba,PR
+Elaine,Santos,51977665544,elaine.santos@example.com,91234567801,28/12/1985,90010-150,Rua dos Andradas,1500,Apto 302,Centro Historico,Porto Alegre,RS
+Fernando,Costa,71966554433,fernando.costa@example.com,13456789012,1993-06-10,40020-000,Rua Chile,45,,Comercio,Salvador,BA
+Gabriela,Mendes,61955443322,gabriela.mendes@example.com,25678901234,14/09/1991,70070-120,SBS Quadra 2,14,Bloco E,Asa Sul,Brasilia,DF
+Henrique,Lima,81944332211,henrique.lima@example.com,37890123456,1987-01-22,50010-000,Rua do Sol,88,Sala 3,Santo Antonio,Recife,PE
+Isabela,Rocha,85933221100,isabela.rocha@example.com,49012345678,30/05/1998,60060-370,Rua Guilherme Rocha,250,,Centro,Fortaleza,CE
+Joao,Almeida,92922110099,joao.almeida@example.com,51234567890,1982-08-05,69010-060,Rua Barroso,33,Fundos,Centro,Manaus,AM
+Karen,Ribeiro,62911009988,karen.ribeiro@example.com,63456789012,17/03/1994,74015-030,Rua 3,120,Apto 501,Setor Central,Goiania,GO
+Lucas,Pereira,27900998877,lucas.pereira@example.com,75678901234,1996-12-01,29010-002,Avenida Princesa Isabel,600,,Centro,Vitoria,ES
+Mariana,Araujo,98899887766,mariana.araujo@example.com,87890123456,09/11/1989,79002-170,Rua 14 de Julho,2000,Loja 7,Centro,Campo Grande,MS
+Nicolas,Gomes,91888776655,nicolas.gomes@example.com,99012345678,1991-04-27,66010-020,Avenida Presidente Vargas,100,,Campina,Belem,PA
+Olivia,Martins,84877665544,olivia.martins@example.com,10293847561,25/08/1997,59010-100,Rua Joao Pessoa,450,Apto 204,Cidade Alta,Natal,RN
+Paulo,Cardoso,63866554433,paulo.cardoso@example.com,20394857162,1984-10-13,64000-060,Rua Lisandro Nogueira,77,,Centro,Teresina,PI
+Rafaela,Dias,65855443322,rafaela.dias@example.com,30495867263,06/02/1993,78005-390,Avenida do CPA,1200,Bloco B,Centro Politico,Cuiaba,MT
+Samuel,Teixeira,68844332211,samuel.teixeira@example.com,40596877364,1999-07-19,69900-084,Rua Epaminondas Jacome,55,,Centro,Rio Branco,AC
+Tatiana,Barbosa,96833221100,tatiana.barbosa@example.com,50697887465,11/06/1986,57010-000,Rua do Comercio,320,Sala 10,Centro,Maceio,AL
+Vinicius,Nunes,79822110099,vinicius.nunes@example.com,60798897566,1992-09-03,79100-000,Rua Aquidauana,180,,Centro,Campo Grande,MS

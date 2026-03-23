@@ -295,7 +295,7 @@ $sidebar-brand-icon-top-color: (
   "dark": lighten($primary, 12.5%),
   "light": lighten($primary, 15%)) !default;
 $sidebar-brand-color: (
-  "default": $static-white,
+  "default": #1F2937,
   "colored": $static-white,
   "dark": $static-white,
   "light": lighten($static-gray-800, 25%)) !default;
@@ -374,6 +374,13 @@ $sidebar-link-icon-active-color: (
   "colored": $static-gray-100,
   "dark": $static-gray-200,
   "light": #{lighten($primary, 5)}) !default;
+
+// Sidebar active/hover background
+$sidebar-item-active-bg: (
+  "default": rgba(0, 0, 0, 0.15),
+  "colored": rgba(0, 0, 0, 0.15),
+  "dark": rgba(255, 255, 255, 0.06),
+  "light": rgba(0, 0, 0, 0.035)) !default;
 
 // Sidebar badges
 $sidebar-badge-primary-color: (

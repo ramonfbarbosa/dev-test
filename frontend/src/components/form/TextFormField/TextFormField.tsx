@@ -376,6 +376,12 @@ const InputComponent = ({ componentType, formikError, name: fieldName, ...props 
     }
   }
 
+  const inputValue = props.format
+    ? props.format(props.value)
+    : props.mask && typeof props.value === "string"
+      ? format.toMask(props.value, props.mask)
+      : props.value ?? "";
+
   const [showPassword, setShowPassword] = useState<boolean>(false);
   if (props.password) {
     return (
@@ -388,11 +394,10 @@ const InputComponent = ({ componentType, formikError, name: fieldName, ...props 
           onBlur={props.onBlur}
           onFocus={props.onFocus}
           disabled={props.disabled}
-          value={props.value ?? ""}
+          value={inputValue}
           type={showPassword ? "text" : "password"}
           className={`password-input`}
           autoComplete={props.disableAutoComplete ? "off" : "on"}
-          {...(props.format && { value: props.format(props.value) })}
         />
         <button
           type="button"
@@ -425,8 +430,7 @@ const InputComponent = ({ componentType, formikError, name: fieldName, ...props 
           disabled={props.disabled}
           autoComplete={props.disableAutoComplete ? "off" : "on"}
           {...(props.textarea ? { as: "textarea" } : {})}
-          value={props.value ?? ""}
-          {...(props.format && { value: props.format(props.value) })}
+          value={inputValue}
           style={{ width: "100%", height: '100% !important', ...props.style }}
         />
       </>

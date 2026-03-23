@@ -1,9 +1,15 @@
 export type ApiError = {
-    message: string;
-    items?: ApiErrorItem[]
+    message?: string;
+    Message?: string;
+    errors?: ApiErrorItem[];
+    Errors?: ApiErrorItem[];
+    items?: ApiErrorItem[];
+    status?: number;
 }
 
-type ApiErrorItem = {
-    key: string;
-    value: string
+export type ApiErrorItem = {
+    key?: string;
+    Key?: string;
+    value?: string;
+    Value?: string;
 }

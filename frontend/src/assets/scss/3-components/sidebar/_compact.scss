@@ -78,7 +78,7 @@ body[data-sidebar-behavior=compact] {
 
     .sidebar-item.active .sidebar-link,
     .sidebar-item.active .sidebar-link:hover {
-      background-color: black !important;
+      @include theme("background-color", $sidebar-item-active-bg);
     }
   }
 
