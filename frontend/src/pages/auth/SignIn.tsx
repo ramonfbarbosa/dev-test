@@ -60,7 +60,7 @@ function SignInPage() {
                     navigate(redirectUri ?? "/");
                   } catch (error: any) {
                     const apiError = getApiErrorDetails(error);
-                    const message = apiError.message || error.message || "Usuário ou senha inválidos";
+                    const message = apiError.errors[0]?.value || apiError.message || "Usuário ou senha inválidos";
                     setErrors({ submit: message });
                   }
                 }}
